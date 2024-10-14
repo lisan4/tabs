@@ -1,4 +1,7 @@
-function tabs(tabsSelector, tabsContentSelector, tabParentSelector, activeClass) {
+function tabs(tabsSelector, tabsContentSelector, tabParentSelector, activeClass) { // ".tabheader__item", //каждый пункт выбора (фитнес, премиум, постное, сбалансированное)
+                                                                                   // ".tabcontent", //каждый див, куда входит картинка + текст
+                                                                                   // ".tabheader__items", // див куда входит все пункты выбора
+                                                                                   // "tabheader__item_active"); // класс активности
     const tabs = document.querySelectorAll(tabsSelector),
           tabsContent = document.querySelectorAll(tabsContentSelector),
           tabsParent = document.querySelector(tabParentSelector);
@@ -27,7 +30,7 @@ function tabs(tabsSelector, tabsContentSelector, tabParentSelector, activeClass)
         const target = event.target; //чтобы легче было
         // console.log(target); //target - выдяет див в котором лежит каждый пункт меню
 
-        if (target && target.classList.contains(tabsSelector.slice(1))) { //проверяет есть ли вообще target и есть ли у этого таргета класс tabgeader__item
+        if (target && target.classList.contains(tabsSelector.slice(1))) { //проверяет есть ли вообще target и есть ли у этого таргета класс tabheader__item
             tabs.forEach((item, i) => { //перебирает все табы, i порядковый номер
                 if (target == item) { //если таргет = нашему item на который мы кликаем, то выполняем функции
                     hideTabContent();
